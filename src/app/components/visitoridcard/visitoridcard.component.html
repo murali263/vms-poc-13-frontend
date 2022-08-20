@@ -1,0 +1,41 @@
+<div class="card" style="border: none; padding-top: 3em;">
+  <div class="card-body">
+
+      <div class="card-container">
+        <div #visitorPass>
+        <div class="upper-container">
+          <h3 class="text-white" style="text-align: center; padding: 10%;font-weight: 500;font-size: 32px;">VISITOR PASS
+          </h3>
+          <div class="image-container">
+            <img src="{{imageBinary}}" />
+          </div>
+        </div>
+        <div class="lower-container">
+          <div>
+            <br>
+            <br>
+            <br>
+            <h3 class="mb-5" class="idname" style="font-weight: bold;font-size: 22px;">{{data.visitor_name}}</h3>
+            <h4 style="margin-left: 5%;">MOBILE NO   :   {{data.mobile}}</h4>
+            <h4 style="margin-left: 5%;">REFER TO   :  {{data.refer_to}}</h4><br>
+          </div>
+          <div>
+            <span class="btn">Novotel Hotel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align: center;">
+      <button type="button" class="btn btn-primary" (click)="downloadImage()">
+        <mat-icon>print</mat-icon>download
+      </button>
+    </div>
+  </div>
+
+
+</div>
+
+<div id="download">
+  <img #canvas>
+  <a #downloadLink></a>
+</div>

@@ -1,0 +1,167 @@
+   <form [formGroup]="visitorform" >
+                                <mat-grid-list cols="2" rowHeight="450px">
+                                    <mat-grid-tile>
+                                        <div class="bothsidewith">
+                                      
+                                           
+                                            <mat-form-field appearance="fill" color="primary">
+                                                <mat-label> Company Name </mat-label>
+                                                <input class="text-capitalize" matInput formControlName="CompanyName"
+                                                    (keypress)="letterOnly($event)">
+                                                <mat-icon matPrefix>account_circle</mat-icon>
+                                                <mat-error *ngIf="visitorform.controls['CompanyName'].invalid ">
+                                                    <div *ngIf="visitorform.controls['CompanyName'].errors?.required">
+                                                        Contact Person is required
+                                                    </div>
+                                                    <div *ngIf="visitorform.controls['CompanyName'].errors?.pattern">
+                                                        {{characterspattern}}
+                                                    </div>
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="fill" color="primary">
+                                                <mat-label> Contact Person </mat-label>
+                                                <input class="text-capitalize" matInput formControlName="visitor_name"
+                                                    (keypress)="letterOnly($event)">
+                                                <mat-icon matPrefix>account_circle</mat-icon>
+                                                <mat-error *ngIf="visitorform.controls['visitor_name'].invalid ">
+                                                    <div *ngIf="visitorform.controls['visitor_name'].errors?.required">
+                                                        Contact Person is required
+                                                    </div>
+                                                    <div *ngIf="visitorform.controls['visitor_name'].errors?.pattern">
+                                                        {{characterspattern}}
+                                                    </div>
+                                                </mat-error>
+                                            </mat-form-field>
+                                            
+                                            <mat-form-field appearance="fill" color="primary">
+                                                <mat-label>Event Type </mat-label>
+                                                <input class="text-capitalize" matInput formControlName="EventType" (keypress)="letterOnly($event)">
+                                                <mat-icon matPrefix>account_circle</mat-icon>
+                                                <mat-error *ngIf="visitorform.controls['EventType'].invalid ">
+                                                    <div *ngIf="visitorform.controls['EventType'].errors?.required">
+                                                        Event Type Is Required
+                                                    </div>
+                                                    <div *ngIf="visitorform.controls['EventType'].errors?.pattern">
+                                                        {{characterspattern}}
+                                                    </div>
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="fill" color="primary">
+                                                <mat-label>Role </mat-label>
+                                                <input class="text-capitalize" matInput formControlName="Role" (keypress)="letterOnly($event)">
+                                                <mat-icon matPrefix>account_circle</mat-icon>
+                                                <mat-error *ngIf="visitorform.controls['Role'].invalid ">
+                                                    <div *ngIf="visitorform.controls['Role'].errors?.required">
+                                                        Role Is Required
+                                                    </div>
+                                                    <div *ngIf="visitorform.controls['Role'].errors?.pattern">
+                                                        {{characterspattern}}
+                                                    </div>
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <div formArrayName="members" class="addmoreformcontrols">
+                                                <div>
+                                                    <input type="button" (click)="newtext()" class="btn btn-primary"
+                                                        value="Add  Members" />
+                                                </div>
+                                                <div>
+                                                    <div *ngFor="let quantity of members().controls; let i=index"
+                                                        [formGroupName]="i">
+                                                        <div class="d-flex">
+                                                            <mat-form-field appearance="fill" color="primary">
+                                                                <mat-label> Member Name </mat-label>
+                                                                <input matInput type="text" matInput
+                                                                    formControlName="membername">
+                                                            </mat-form-field>
+                                                            <div>
+                                                                <mat-icon (click)="remove(i)" style="color:red">clear</mat-icon>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         
+                                      
+                                         
+                                            <br>
+
+
+                                        </div>
+
+                                    </mat-grid-tile>
+                                    <mat-grid-tile>
+                                        <div class="eventorganiserrightwidth">
+                                           
+                                            <mat-form-field appearance="fill" color="primary">
+                                                <mat-label>Phone Number </mat-label>
+                                                <input matInput type="number" maxlength="10" formControlName="mobile">
+                                                <span matPrefix>+91 </span>
+                                                <br>
+                                                <mat-error *ngIf="visitorform.controls['mobile'].invalid ">
+                                                    <div *ngIf="visitorform.controls['mobile'].errors?.required">
+                                                        Phone Number is required
+                                                    </div>
+                                                    <div *ngIf="visitorform.controls['mobile'].errors?.pattern">
+                                                        Phone Number is invalid
+                                                    </div>
+                                                </mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="fill" color="primary">
+                                                <mat-label>Vehicle Number</mat-label>
+                                                <input matInput formControlName="vehicle_number" maxlength="10"
+                                                    style="text-transform: uppercase;">
+                                                <mat-icon matPrefix> directions_car</mat-icon>
+                                            </mat-form-field>
+                                     
+                                            <mat-form-field appearance="fill" class="example-form-field">
+                                                <mat-label>From-To (Date)</mat-label>
+                                                <mat-date-range-input [rangePicker]="rangePicker">
+                                                    <input matStartDate formControlName="FromDate" placeholder="Start date">
+                                                    <input matEndDate formControlName="ToDate" placeholder="End date">
+                                                </mat-date-range-input>
+                                                <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+                                                <mat-date-range-picker #rangePicker>
+                                                    <mat-date-range-picker-actions>
+                                                        <button mat-button matDateRangePickerCancel>Cancel</button>
+                                                        <button mat-raised-button color="primary"
+                                                            matDateRangePickerApply>Apply</button>
+                                                    </mat-date-range-picker-actions>
+                                                </mat-date-range-picker>
+                                            </mat-form-field>
+                                            <mat-form-field appearance="fill" color="primary">
+                                                <mat-label>Comments</mat-label>
+                                                <textarea matInput maxlength="300" formControlName="Comment" cdkTextareaAutosize
+                                                    cdkAutosizeMinRows="2" cdkAutosizeMaxRows="5">
+                                        </textarea>
+                                            </mat-form-field>
+                                        </div>
+
+                                    </mat-grid-tile>
+                                           
+                                </mat-grid-list>
+                                <div>
+                                    <button mat-raised-button color="primary" (click)="checkPermissions()">
+                                        <mat-icon>add_a_photo</mat-icon>
+                                    </button>
+
+                                    <p *ngIf="status">Status here: {{status}}</p>
+                                </div>
+                                <div class="d-flex">
+                                    <div *ngIf="stream">
+                                        
+                                        <webcam [height]="200" [width]="250" [trigger]="$trigger"
+                                            (imageCapture)="snapshot($event)" [imageQuality]="1"></webcam>
+                                        <br>
+                                        <button mat-raised-button color="primary"
+                                            (click)="captureImage()">{{btnLabel}}</button>
+                                    </div>
+                                    <div *ngIf="previewImage" style="margin-left: 25px;">
+                                        <img [src]="previewImage" formControlName="files" height="187" width="250"><br>
+                                    
+                                    </div>
+                                </div>
+                                <div>
+                                    <button mat-raised-button class="buttonRow" (click)="createvisitor()" type="submit">Create Pass</button>
+                                </div>
+                            </form>

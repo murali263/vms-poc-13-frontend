@@ -1,0 +1,78 @@
+<mat-toolbar>
+  <button mat-icon-button>
+
+    <mat-icon class="primary" style="color: #ffff;" class="mat-18" (click)="sidenav.toggle()">menu</mat-icon>
+
+  </button>
+  <!-- <span class="left-sidebar-header" >VMS</span> -->
+  <span class="space"></span>
+  <span class="center-toolbar-heading">Visitor Management System</span>
+
+
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true">
+    <mat-nav-list>
+      <mat-list-item class="main" *ngIf="role=='superadmin'" [routerLink]="['companyadmin']"
+      [routerLinkActive]="['is-active']">
+        <div fxLayout="row wrap" class="pointer" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"></div>
+          <img src="../../../assets/sidebar/icons/company admin.png" class="icon-headers">
+          <div fxLayout="column wrap" fxFlex="76" fxLayoutAlign="center start"  (click)="onChange()" [fxShow]="true"><span
+              class="menu-button">
+              <span class="text-white">Company&nbsp;Admin</span> </span></div>
+        </div>
+      </mat-list-item>
+      <mat-list-item class="main" [routerLink]="['checkin-out']" *ngIf="role=='superadmin'|| role=='guard' || role=='subadmin'" [routerLinkActive]="['is-active']">
+        <div fxLayout="row wrap" class="pointer" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" fxLayoutAlign="center start" [fxShow]="true" [fxHide]="false"></div>
+          <img src="../../../assets/sidebar/icons/check in-out.png" class="icon-headers">
+          <div fxLayout="column wrap" fxFlex="76" fxLayoutAlign="start center"
+             (click)="onChange()" [fxShow]="true"><span
+              class="menu-button"><span class="text-white">
+                Check&nbsp;In/Out</span></span></div>
+        </div>
+      </mat-list-item>
+      <mat-list-item class="main" [routerLink]="['guard']" *ngIf="role=='superadmin'" [routerLinkActive]="['is-active']">
+        <div fxLayout="row wrap" class="pointer" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"></div>
+          <img src="../../../assets/sidebar/icons/Guard.png" class="icon-headers">
+          <div fxLayout="column wrap" fxFlex="76" fxLayoutAlign="center start"
+             (click)="onChange()" [fxShow]="true"><span class="menu-button">
+              <span class="text-white">Guard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> </span></div>
+        </div>
+      </mat-list-item>
+
+      <mat-list-item class="main" *ngIf="role=='superadmin'|| role=='subadmin' || role == 'guard'" [routerLink]="['visitor']"
+      [routerLinkActive]="['is-active']">
+        <div fxLayout="row wrap" class="pointer" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"></div>
+          <img src="../../../assets/sidebar/icons/visitor.png" class="icon-headers">
+          <div fxLayout="column wrap" fxFlex="76" fxLayoutAlign="center start"  (click)="onChange()" [fxShow]="true"><span
+              class="menu-button">
+              <span class="text-white">Visitor&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> </span></div>
+        </div>
+      </mat-list-item>
+      
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div fxLayout="row" class="pointer"   fxLayoutAlign="end stretch" [fxShow]="true">
+      <mat-card  class="corner">
+       <mat-icon class="profile" >account_circle</mat-icon>
+             <span class="user">Welcome {{fname}}&nbsp;{{lname}}
+          <label class="out" (click)="logout()"><span class="ml-2 mr-2 logout" class="material-icons">
+              login
+            </span></label>
+            <br><span class="text-capitalize" *ngIf="role=='superadmin'">application admin
+            </span>
+            <span class="text-capitalize" *ngIf="role=='subadmin'">company admin
+            </span>
+            <span class="text-capitalize" *ngIf="role=='guard'">guard
+            </span>
+  </span>
+      </mat-card>
+    </div>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
