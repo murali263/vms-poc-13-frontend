@@ -1,0 +1,151 @@
+.bothsidewith {
+  width: 100%;
+  padding: 5%;
+}
+
+.bothsidewith>* {
+  width: 100%;
+}
+
+.myPadding {
+  padding-bottom: 10px;
+  ;
+}
+
+.box {
+  width: 250px;
+  height: 250px
+}
+
+example-table {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}
+
+tr.mat-header-row {
+  height: 56px;
+  background-color: #E4DEFF;
+}
+
+th.mat-header-cell {
+  text-align: center;
+  max-width: 300px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+td.mat-header-cell .td.mat-cell {
+  text-align: center;
+  max-width: 300px;
+  text-transform: lowercase;
+  font-size: 14px;
+}
+
+.searchicon {
+  cursor: pointer;
+  color: cadetblue;
+}
+
+
+
+.bothsidewithright {
+  width: 100%;
+  padding: 4%
+}
+
+.bothsidewithright>* {
+  width: 100%;
+}
+
+::ng-deep .mat-paginator {
+  display: block;
+  border-radius: 0px 0px 20px 20px;
+}
+
+::ng-deep .mat-tab-group {
+  border-radius: 20px;
+}
+
+.mat-row:nth-child(even) {
+  background-color: #F6F4FF;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+  color: #9D24FC;
+  font-size: 25px;
+
+}
+
+::ng-deep .mat-tab-list .mat-tab-labels {
+  color: #9D24FC;
+  font-size: 25px;
+
+}
+::ng-deep .mat-icon{
+  color: #35355b;
+  cursor: pointer;
+}
+::ng-deep .mat-ink-bar {
+  background-color: var(--primary-color, #1F89CE) !important;
+}
+::ng-deep .table-responsive{
+  overflow-y: hidden;
+}
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle , .mat-radio-outer-circle {
+  border-color: blue !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle{
+  background-color: blue !important;
+}
+.buttonRow {
+
+  float: right;
+  margin: -34px 34px 23px 0px;
+  display: block;
+  width: 20%;
+  height: 50px;
+  border: none;
+  background: linear-gradient(180deg, #9D24FC 0%, #C37CFF 82.89%);
+  background-size: 200%;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+
+/* form alignment correction and media responsive forms */
+
+.visitorbothsidewithright{
+  width: 100%;
+  padding: 0px 0px 57px 10px;
+  display: grid;
+}
+.addmoreformcontrols{
+  height: 100px;
+  width: 100%;
+  overflow-y: scroll;
+}
+.eventbothsidewithright{
+  width: 100%;
+  padding: 0px 0px 57px 10px;
+  display: grid;
+}
+.labbothsidewithright{
+  width: 100%;
+  padding: 0px 0px 87px 10px;
+  display: grid;
+}

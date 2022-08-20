@@ -1,0 +1,128 @@
+
+ mat-toolbar {
+  background: #35355B;
+  color:white;
+
+}
+.is-active {
+
+  border-left: 5px solid #21CC8D;
+  border-radius: 5px;
+}
+::ng-deep .customize{
+  background: #fff;
+  color: black
+}
+::ng-deep .customize a{
+  color: #fff
+}
+::ng-deep .menu-button{
+  margin-left: 5px;
+}
+mat-sidenav {
+
+  width: 220px;
+   background: linear-gradient(180deg, #6868B5 50%, #CDC3FF 100%);
+
+  /* color: #fff; */
+  /* border-radius: 1px; */
+  /* text-align: center; */
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+  background-color: #efefef
+
+}
+
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+}
+
+.profile_icon{
+  margin-left: 200vh;
+}
+/* .space{
+flex: 1 1 auto;
+border-radius: 15px;
+height: 50px;
+width: 50px;
+} */
+.space{
+  flex:0.5
+}
+.d-one{
+  display: grid;
+  margin-bottom: -15px;
+
+}
+.mat-icon {
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 13px;
+  width: 24px;
+  cursor: pointer;
+}
+
+.left-sidebar-header{
+  user-select: none;
+  position: absolute;
+  height: 65px;
+  padding-top: 20px;
+  margin-left: 60px;
+  color:white;
+}
+.center-toolbar-heading{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size:35px;
+line-height: 42px;
+color: white;
+}
+@media screen and (max-width: 600px) {
+  .center-toolbar-heading{
+
+  font-size:20px;
+
+  }
+}
+.corner{
+  position: absolute;
+ width: 350px;
+ height: 75px;
+ background: #FFFFFF;
+ box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
+ border-radius: 50px;
+ margin-top: 20px;
+ margin-right: 15px
+ }
+
+
+ .profile{
+   background-color:white;
+    color:purple;
+    font-size:40px;
+
+ }
+
+  .out{
+    position: absolute;
+   left: 220px;
+
+  }
+  .user{
+    position: absolute;
+    left: 70px;
+    top: 20px;
+  }
+.icon-headers{
+  height: 24px;
+}
+
+

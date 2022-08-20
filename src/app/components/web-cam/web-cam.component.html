@@ -1,0 +1,31 @@
+
+
+
+
+
+
+
+
+<div class="conatiner">
+    <div class="row">
+        <div>
+            <button mat-raised-button color="primary" (click)="checkPermissions()">Check the webcam permissions</button>
+            <p *ngIf="status">Status here: {{status}}</p>
+        </div>
+<div class="col-md-6">
+    <div *ngIf="stream">
+        <!-- web cam image will be shown here -->
+        <webcam [trigger]="$trigger" (imageCapture)="snapshot($event)" [imageQuality]="1"></webcam>
+        <button mat-raised-button color="primary" (click)="captureImage()" >{{btnLabel}}</button>
+   </div>
+</div>
+<div class="col-md-6">
+<!-- Preview section -->
+<div *ngIf="previewImage">
+    <img [src]="previewImage" height="300" width="300"><br>
+    <button mat-raised-button color="primary" (click)="proceed()">Proceed</button>
+</div>
+</div>
+    </div>
+
+</div>
